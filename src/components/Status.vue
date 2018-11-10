@@ -1,6 +1,6 @@
 <template>
   <div class="status-container">
-    <img v-bind:src="avatarURL" class="avatar">
+    <img :src="avatarURL" class="avatar">
     <div class="player-information">
       <h4 class="player-name">{{playerName}}</h4>
       <hr class="divider" />
@@ -8,6 +8,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
 	name: 'Status',
@@ -19,8 +20,8 @@ export default {
 		},
 		avatarURL: {
 			type: String,
-			required: true,
-			default: '../assets/logo.png',
+			required: false,
+			default: '',
 		},
 		score: {
 			type: Number,
