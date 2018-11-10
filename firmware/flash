@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo 'Flashing main.py...'
+ampy --port /dev/tty.SLAB_USBtoUART put main.py /main.py
+echo 'Flashing bmp280.py...'
+ampy --port /dev/tty.SLAB_USBtoUART put bmp280.py /bmp280.py
+echo 'Listing directory'
+ampy --port /dev/tty.SLAB_USBtoUART ls
+echo 'Flash successfully complete'
