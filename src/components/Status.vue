@@ -35,7 +35,8 @@ export default {
   .status-container {
     display: flex;
     align-items: center;
-    background-color: #C9C9C9;
+    background-color: #20C4FF;
+	color: #fff;
     /* border-radius: 10px; */
     z-index: 10;
 
@@ -45,7 +46,7 @@ export default {
     max-width: 15%;
     max-height: 15%;
     border-radius: 50%;
-    background-color: #555555;
+    background-color: #CFE4EB;
     margin: 2%;
   }
 
@@ -61,7 +62,7 @@ export default {
 
   .divider {
     border-width: 0px;
-    border-top: 2px solid #555555;
+    border-top: 2px solid #FFFFFF;
   }
 
   .player-score {

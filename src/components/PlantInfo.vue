@@ -57,17 +57,19 @@ progress[value] {
   appearance: none;
 
   width: 100%;
-  height: 10px;
+  height: 0.6rem;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color: #eee;
+  background-color: transparent;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.25) inset;
 }
 
 progress[value]::-webkit-progress-value {
-		border-radius: 5px;
-		background-size: 35px 20px, 100% 100%, 100% 100%;
+	border-radius: 0.5rem;
+	background: linear-gradient(#75FF7D, #20FF2C);
+	background-repeat: repeat-y;
 }
+
 </style>
