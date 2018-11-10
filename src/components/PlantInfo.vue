@@ -1,6 +1,6 @@
 <template>
 	<div class="infobox">
-		<img :src="plant.image" class="character">
+		<img :src="plant.image">
 		<h3 class="name">{{ plant.name }}</h3>
 		<h3 class="lvl">Lvl {{ plant.level }}</h3>
 		<h4 class="health">Health:</h4>
@@ -29,8 +29,8 @@ export default {
 	padding: 10px;
 }
 
-.img {
-	width: 100px;
+img {
+	width: 100%;
 }
 
 .lvl, .name {
@@ -65,13 +65,4 @@ progress[value]::-webkit-progress-value {
 		border-radius: 5px;
 		background-size: 35px 20px, 100% 100%, 100% 100%;
 }
-
-progress-50::-webkit-progress-value {
-	background-color: red;
-}
-
-progress-100::-webkit-progress-value {
-	background-color: green;
-}
-
 </style>
