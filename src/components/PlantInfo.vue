@@ -1,8 +1,13 @@
 <template>
 	<div class="infobox">
-		<img :src="plant.image">
+		<div class="image">
+			<img :src="plant.image">
+		</div>
 		<div class="info">
-			<h3 class="name">{{ plant.name }}<span class="lvl">Lvl {{ plant.level }}</span></h3>
+			<div class="text">
+				<h3 class="name">{{ plant.name }}</h3>
+				<span class="lvl">Lvl {{ plant.level }}</span>
+			</div>
 			<progress max="100" :value="plant.health"></progress>
 		</div>
 	</div>
@@ -25,9 +30,6 @@ export default {
 <style scoped>
 .infobox {
 	background-color: #FFFFFF;
-	position: relative;
-	width: 47.22%;
-	height: 10rem;
 
 	font-family: "Nunito";
 	font-style: normal;
@@ -36,36 +38,46 @@ export default {
 
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 8px;
+
+	display: flex;
+	flex-direction: column;
 }
 
-img {
-	position: absolute;
-	top: 0;
-	bottom: 30%;
+.image {
+	width: 100%;
+	flex: 1 1 auto;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.image img {
 	max-width: 100%;
-	max-height: 70%;
+	max-height: 16rem;
 }
 
 .info {
-	position: absolute;
-	height: 30%;
-	left: 0.5rem;
-	right: 0.5rem;
-	bottom: 0.5rem;
+	padding: 1rem;
+}
+
+.text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .name {
+	flex: 1 1;
 	font-weight: bold;
 	font-size: 1.25rem;
 	margin: 0;
+
+	word-break: break-word;
 }
 
 .lvl {
-	position: absolute;
-	top: 0.25rem;
-	right: 0;
-	text-align: right;
-
+	flex: 0 0 auto;
+	margin-left: 0.5rem;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: inherit;
@@ -81,14 +93,14 @@ progress[value] {
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color: transparent;
+  background-color: #ECFFF7;
   border-radius: 5px;
-  box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.25) inset;
 }
 
 progress[value]::-webkit-progress-value {
 	border-radius: 0.5rem;
-	background: linear-gradient(#75FF7D, #20FF2C);
+	background: linear-gradient(#44DF9E, #2AB87D);
 	background-repeat: repeat-y;
 }
 

@@ -5,11 +5,10 @@
 			:avatarURL="avatarURL"
 			:score="score" />
 		<div class="plantlist">
-			<router-link
+			<PlantInfo
 				v-for="plant in plants" :key="plant.id"
-				:to="{ name: 'plant', params: { id: plant.id } }">
-				<PlantInfo class="plant" :plant="plant" :key="plant.id"/>
-			</router-link>
+				@click="$route.push({ name: 'plant', params: { id: plant.id } })"
+				class="plant" :plant="plant" />
 		</div>
 	</div>
 </template>
