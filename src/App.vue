@@ -9,7 +9,10 @@
 		</nav>
 		-->
 		<router-view/>
-		<router-link class="fab map" to="/map">
+		<router-link class="fab map" to="/" v-if="$route.path == '/map'">
+			<font-awesome-icon icon="times" />
+		</router-link>
+		<router-link class="fab close" to="/map" v-else>
 			<font-awesome-icon icon="map-marked" />
 		</router-link>
 	</div>
