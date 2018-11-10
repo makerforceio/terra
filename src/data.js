@@ -1,6 +1,12 @@
 import PouchDB from 'pouchdb';
 
-const db = new PouchDB('theplantgame');
-window.db = db;
+const playerDB = new PouchDB('theplantgame_player');
+const plantsDB = new PouchDB('theplantgame_plants');
 
-export default db;
+window.playerDB = playerDB; // For debugging
+window.plantsDB = plantsDB;
+
+export default {
+	playerDB,
+	plantsDB,
+};
