@@ -1,11 +1,14 @@
 <template>
 	<div class="container">
-		<Status class="status" />
+		<Status class="status"
+			:playerName="playerName"
+			:score="score" />
 		<PlantInfo v-for="plant in plants" :plant="plant" :key="plant.id"/>
 	</div>
 </template>
 
 <script>
+// import data from '../data';
 import PlantInfo from '@/components/PlantInfo.vue';
 import Status from '@/components/Status.vue';
 
@@ -15,8 +18,12 @@ export default {
 		PlantInfo,
 		Status,
 	},
+	created() {
+	},
 	data() {
 		return {
+			playerName: '',
+			score: '',
 			plants: [
 				{
 					name: 'Cucumber',
@@ -37,7 +44,5 @@ export default {
 </script>
 
 <style scoped>
-	.status {
-		margin-top: 2%;
-	}
+
 </style>
