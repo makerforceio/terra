@@ -29,8 +29,13 @@ export default {
 	padding: 10px;
 }
 
-img {
-	width: 100%;
+.character {
+	max-width: 20%;
+	max-height: 20%;
+}
+
+.img {
+	width: 100px;
 }
 
 .lvl, .name {

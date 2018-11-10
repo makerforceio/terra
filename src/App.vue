@@ -1,21 +1,27 @@
 <template>
 	<div class="app">
+		<!--
 		<nav>
 			<ul>
 				<router-link tag="li" to="/" exact>Dashboard</router-link>
 				<router-link tag="li" to="/map">Map</router-link>
 			</ul>
 		</nav>
+		-->
 		<router-view/>
+		<router-link class="fab map" to="/map">
+			<font-awesome-icon icon="map-marked" />
+		</router-link>
 	</div>
 </template>
 
 <style scoped>
 
 .app {
-	background: #000;
-	color: #fff;
-	font-family: monospace;
+	background: #CEE4EB;
+	color: #1D1300;
+	font-family: "Nunito";
+	min-height: 100vh;
 }
 
 nav {
@@ -40,6 +46,19 @@ li {
 li.router-link-active {
 	background: #444;
 	border-bottom-color: #080;
+}
+
+.fab {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	padding: 1rem;
+
+	box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.25);
+	color: #FFFFFF;
+	background: #FFB265;
+	font-size: 1.25rem;
+	border-radius: 2rem;
 }
 
 </style>
