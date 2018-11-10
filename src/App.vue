@@ -21,7 +21,7 @@
 <style scoped>
 
 .app {
-	/* background: #ECFFF7; */
+	background: #ECFFF7;
 	color: #1D0F00;
 	font-family: "Nunito";
 	min-height: 100vh;

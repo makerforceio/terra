@@ -5,7 +5,11 @@
 			:avatarURL="avatarURL"
 			:score="score" />
 		<div class="plantlist">
-			<PlantInfo v-for="plant in plants" :plant="plant" :key="plant.id"/>
+			<router-link
+				v-for="plant in plants" :key="plant.id"
+				:to="{ name: 'plant', params: { id: plant.id } }">
+				<PlantInfo class="plant" :plant="plant" :key="plant.id"/>
+			</router-link>
 		</div>
 	</div>
 </template>
@@ -79,15 +83,12 @@ export default {
 	background: #ECFFF7;
 }
 .plantlist {
-	position: absolute;
-	top: 7rem;
-	left: 1rem;
-	right: 1rem;
-
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-content: flex-start;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 1rem;
+	margin: 1rem;
+}
+.plant {
+	width: 100%;
 }
 </style>

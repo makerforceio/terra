@@ -37,10 +37,8 @@ export default {
     width: 100%;
     background: linear-gradient(180deg, #67FFA4 0%, #44DF9E 0.01%, #2AB87D 100%);
     color: #fff;
-    position: absolute;
-    left: 0px;
+    position: sticky;
     top: 0px;
-    right: 0px;
 
     font-family: "Nunito";
     font-style: normal;
