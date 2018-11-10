@@ -18,8 +18,8 @@
 <style scoped>
 
 .app {
-	background: #CEE4EB;
-	color: #1D1300;
+	background: #CFE4EB;
+	color: #1D0F00;
 	font-family: "Nunito";
 	min-height: 100vh;
 }
@@ -56,7 +56,7 @@ li.router-link-active {
 
 	box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.25);
 	color: #FFFFFF;
-	background: #FFB265;
+	background: #FF9320;
 	font-size: 1.25rem;
 	border-radius: 2rem;
 }
