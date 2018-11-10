@@ -1,12 +1,16 @@
 <template>
 	<div class="container">
+		<Status class="status" />
 	</div>
 </template>
 
 <script>
+import Status from '../components/Status.vue';
+
 export default {
 	name: 'Overview',
 	components: {
+		Status,
 	},
 	data() {
 		return {
@@ -20,4 +24,7 @@ export default {
 </script>
 
 <style scoped>
+	.status {
+		margin-top: 2%;
+	}
 </style>
