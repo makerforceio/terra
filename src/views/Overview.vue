@@ -12,6 +12,8 @@
 
 <script>
 import data from '../data';
+// eslint-disable-next-line
+import testdata from '../testdata';
 import PlantInfo from '@/components/PlantInfo.vue';
 import Status from '@/components/Status.vue';
 
