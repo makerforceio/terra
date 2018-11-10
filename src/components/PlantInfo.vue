@@ -5,6 +5,11 @@
 <script>
 export default {
 	name: 'PlantInfo',
+	props: {
+		image: String,
+		name: String,
+		health: Number,
+	},
 };
 </script>
 
