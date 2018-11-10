@@ -1,10 +1,10 @@
 <template>
 	<div class="infobox">
 		<img :src="plant.image">
-		<h3 class="name">{{ plant.name }}</h3>
-		<h3 class="lvl">Lvl {{ plant.level }}</h3>
-		<h4 class="health">Health:</h4>
-		<progress max="100" :value="plant.health"></progress>
+		<div class="info">
+			<h3 class="name">{{ plant.name }}<span class="lvl">Lvl {{ plant.level }}</span></h3>
+			<progress max="100" :value="plant.health"></progress>
+		</div>
 	</div>
 </template>
 
@@ -24,31 +24,51 @@ export default {
 
 <style scoped>
 .infobox {
-	width: 40vw;
-	height: 40vw;
-	padding: 10px;
+	background-color: #FFFFFF;
+	position: relative;
+	width: 47.22%;
+	height: 10rem;
+
+	font-family: "Nunito";
+	font-style: normal;
+	line-height: normal;
+	color: #420B07;
+
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
 }
 
-.character {
-	max-width: 20%;
-	max-height: 20%;
+img {
+	position: absolute;
+	top: 0;
+	bottom: 30%;
+	max-width: 100%;
+	max-height: 70%;
 }
 
-.img {
-	width: 100px;
+.info {
+	position: absolute;
+	height: 30%;
+	left: 0.5rem;
+	right: 0.5rem;
+	bottom: 0.5rem;
 }
 
-.lvl, .name {
-	display: inline-block;
-	margin: 0px;
+.name {
+	font-weight: bold;
+	font-size: 1.25rem;
+	margin: 0;
 }
 
 .lvl {
-	float: right;
-}
+	position: absolute;
+	top: 0.25rem;
+	right: 0;
+	text-align: right;
 
-.health {
-	margin: 10px 0px 0px 0px;
+	font-weight: 600;
+	font-size: 0.875rem;
+	line-height: inherit;
 }
 
 progress[value] {

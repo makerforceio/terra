@@ -587,6 +587,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.8"
 
+"@fortawesome/free-brands-svg-icons@^5.5.0":
+  version "5.5.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.5.0.tgz#50e020aced5b9652db1d2d9d7909c73561ff1f4a"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.8"
+
 "@fortawesome/pro-light-svg-icons@^5.5.0":
   version "5.5.0"
   resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/pro-light-svg-icons-5.5.0.tgz#bbfafc6c315592bd93bd77d96b22ba5cc054f745"
