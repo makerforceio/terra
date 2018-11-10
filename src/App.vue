@@ -1,12 +1,15 @@
 <template>
 	<div class="app">
+		<!--
 		<nav>
 			<ul>
 				<router-link tag="li" to="/" exact>Dashboard</router-link>
 				<router-link tag="li" to="/map">Map</router-link>
 			</ul>
 		</nav>
+		-->
 		<router-view/>
+			<router-link class="fab map" to="/map"><i class="fal fa-map"></i></router-link>
 	</div>
 </template>
 
