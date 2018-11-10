@@ -6,6 +6,12 @@ export default data.plantsDB.allDocs().then((docs) => {
 		return data.plantsDB.bulkDocs([
 			{
 				name: 'Tomato',
+				recommended_moisture: 100,
+				recommended_light: 100,
+				recommended_temperature: 100,
+				description: 'Not a vegetable',
+				exp: 10,
+				expup: 100,
 				health: 50,
 				level: 1,
 				type: 'tomato',
@@ -13,6 +19,12 @@ export default data.plantsDB.allDocs().then((docs) => {
 			},
 			{
 				name: 'Sudharshan Plant',
+				recommended_moisture: 100,
+				recommended_light: 100,
+				recommended_temperature: 100,
+				description: 'Why',
+				exp: 20,
+				expup: 250,
 				health: 75,
 				level: 2,
 				type: 'sudharshan',

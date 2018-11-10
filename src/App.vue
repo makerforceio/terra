@@ -10,7 +10,7 @@
 		-->
 		<router-view/>
 		<router-link class="fab map" to="/map">
-			<font-awesome-icon icon="map-marked" />
+			<font-awesome-icon icon="map-marked" class="fab-icon" />
 		</router-link>
 	</div>
 </template>
@@ -18,7 +18,7 @@
 <style scoped>
 
 .app {
-	background: #CFE4EB;
+	/* background: #ECFFF7; */
 	color: #1D0F00;
 	font-family: "Nunito";
 	min-height: 100vh;
@@ -52,13 +52,25 @@ li.router-link-active {
 	position: fixed;
 	bottom: 1rem;
 	right: 1rem;
-	padding: 1rem;
 
-	box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.25);
+	width: 4rem;
+	height: 4rem;
+
+	box-shadow: 0.0625rem 0.125rem 0.5rem rgba(0, 0, 0, 0.25);
+	background: linear-gradient(180deg, #D44941 0%, #B33D37 100%);
+	border-radius: 50%;
+}
+
+.fab-icon {
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	top: 25%;
+	right: 25%;
 	color: #FFFFFF;
-	background: #FF9320;
-	font-size: 1.25rem;
-	border-radius: 2rem;
+	line-height: normal;
+	font-size: 2rem;
+	text-align: center;
 }
 
 </style>

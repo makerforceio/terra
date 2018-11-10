@@ -75,7 +75,15 @@ export default {
 </script>
 
 <style scoped>
+.container {
+	background: #ECFFF7;
+}
 .plantlist {
+	position: absolute;
+	top: 7rem;
+	left: 1rem;
+	right: 1rem;
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
