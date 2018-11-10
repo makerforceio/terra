@@ -22,15 +22,29 @@ export default {
 		Status,
 	},
 	created() {
-		data.get('player').then((player) => {
+		data.playerDB.get('player').then((player) => {
 			this.playerName = player.name;
 			this.score = player.score;
-			return data.getAttachment('player', 'avatar');
+			return data.playerDB.getAttachment('player', 'avatar');
 		}).then((blob) => {
 			this.avatarURL = URL.createObjectURL(blob);
-		}).catch((err) => {
-			console.log(err);
-		});
+		}).catch(console.error);
+
+		data.plantsDB.allDocs({
+			include_docs: true,
+			attachments: true,
+		}).then((res) => {
+			this.plants = res.rows.map(row => row.doc).map(doc => ({
+				name: doc.name,
+				health: doc.health,
+				// image: URL.createObjectURL(doc._attachments.image.data),
+				image: doc.image,
+				level: doc.level,
+				// eslint-disable-next-line
+				id: doc._id,
+				type: doc.type, // Type of plant (name can be custom-set)
+			}));
+		}).catch(console.error);
 	},
 	data() {
 		return {
