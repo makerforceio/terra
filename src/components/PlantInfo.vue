@@ -1,18 +1,21 @@
 <template>
-	<h1>Hi</h1>
+	<div class="infobox">
+		{{ plant.name }}
+	</div>
 </template>
 
 <script>
 export default {
 	name: 'PlantInfo',
 	props: {
-		image: String,
-		name: String,
-		health: Number,
+		plant: {
+			image: String,
+			name: String,
+			health: Number,
+		},
 	},
 };
 </script>
 
 <style scoped>
-
 </style>

@@ -1,20 +1,19 @@
 <template>
 	<div class="container">
-		<PlantInfo v-for="plant in plants"
-		:key="plant.id"
-		:name="plant.name"
-		:health="plant.health"
-		:image="plant.image"/>
+		<Status class="status" />
+		<PlantInfo v-for="plant in plants" :plant="plant" :key="plant.id"/>
 	</div>
 </template>
 
 <script>
 import PlantInfo from '@/components/PlantInfo.vue';
+import Status from '../components/Status.vue';
 
 export default {
 	name: 'Overview',
 	components: {
 		PlantInfo,
+		Status,
 	},
 	data() {
 		return {
@@ -38,4 +37,7 @@ export default {
 </script>
 
 <style scoped>
+	.status {
+		margin-top: 2%;
+	}
 </style>
