@@ -1,6 +1,6 @@
 <template>
 	<div class="infobox">
-		<img :src="plant.image" class="character">
+		<img :src="plant.image">
 		<h3 class="name">{{ plant.name }}</h3>
 		<h3 class="lvl">Lvl {{ plant.level }}</h3>
 		<h4 class="health">Health:</h4>
