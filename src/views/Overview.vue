@@ -7,7 +7,7 @@
 
 <script>
 import PlantInfo from '@/components/PlantInfo.vue';
-import Status from '../components/Status.vue';
+import Status from '@/components/Status.vue';
 
 export default {
 	name: 'Overview',
@@ -21,7 +21,7 @@ export default {
 				{
 					name: 'Cucumber',
 					health: 50,
-					image: 'aseDf',
+					image: '../assets',
 					id: 0,
 				},
 				{

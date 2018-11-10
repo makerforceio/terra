@@ -1,6 +1,6 @@
 <template>
 	<div class="infobox">
-		{{ plant.name }}
+		<img :src="plant.img" class="character">
 	</div>
 </template>
 
