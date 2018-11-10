@@ -3,7 +3,9 @@
 		<Status class="status"
 			:playerName="playerName"
 			:score="score" />
-		<PlantInfo v-for="plant in plants" :plant="plant" :key="plant.id"/>
+		<div class="plantlist">
+			<PlantInfo v-for="plant in plants" :plant="plant" :key="plant.id"/>
+		</div>
 	</div>
 </template>
 
@@ -28,12 +30,14 @@ export default {
 				{
 					name: 'Cucumber',
 					health: 50,
-					image: '../assets',
+					image: '../assets/logo.png',
+					level: 20,
 					id: 0,
 				},
 				{
 					name: 'Tomato',
 					health: 35,
+					level: 30,
 					image: 'dfWgF',
 					id: 1,
 				},
@@ -44,5 +48,11 @@ export default {
 </script>
 
 <style scoped>
-
+.plantlist {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-content: flex-start;
+}
 </style>
