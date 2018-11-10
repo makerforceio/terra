@@ -29,6 +29,11 @@ export default {
 	padding: 10px;
 }
 
+.character {
+	max-width: 20%;
+	max-height: 20%;
+}
+
 .img {
 	width: 100px;
 }
