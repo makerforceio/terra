@@ -5,13 +5,14 @@ export default data.plantsDB.allDocs().then((docs) => {
 	if (docs.total_rows <= 0) {
 		return data.plantsDB.bulkDocs([
 			{
+				_id: 'test',
 				name: 'Tomato',
 				recommended_moisture: 100,
 				recommended_light: 100,
 				recommended_temperature: 100,
 				current_moisture: 20,
 				current_light: 15,
-				currrent_temperature: 5,
+				current_temperature: 5,
 				description: 'Not a vegetable',
 				exp: 10,
 				expup: 100,

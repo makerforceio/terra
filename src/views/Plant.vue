@@ -11,11 +11,11 @@
 				<h3>Overall Health:</h3>
 				<Progress :max="100" :value="plant.health" />
 				<h3>Soil Moisture:</h3>
-				<Progress :max="100" :value="plant.current_moisture" />
+				<Progress :max="1024" :value="plant.current_moisture" />
 				<h3>Temperature:</h3>
-				<Progress :max="100" :value="plant.currrent_temperature" />
+				<Progress :max="1024" :value="plant.currrent_temperature" />
 				<h3>Light:</h3>
-				<Progress :max="100" :value="plant.current_light" />
+				<Progress :max="1024" :value="plant.current_light" />
 			</div>
 		</div>
 		<p class="description">{{ plant.description }}</p>
@@ -27,27 +27,30 @@
 
 <script>
 import data from '../data';
+import Requests from '../requests';
 import Progress from '../components/Progress.vue';
+
+const requests = new Requests('http://localhost:9000');
 
 export default {
 	name: 'Plant',
 	components: { Progress },
 	data() {
 		return {
-			plant: {
-				image: '/characters/carrot.png',
-				name: 'Broccoli',
-				health: 40,
-				level: 2,
-				exp: 1234,
-				expup: 2000,
-				description: 'sdfsdfsdfssssssssssssssssssssssssssssss',
-			},
+			plant: {},
 		};
 	},
 	mounted() {
 		data.plantsDB.get(this.$route.params.id).then((doc) => {
 			this.plant = doc;
+			// eslint-disable-next-line
+			if (this.plant._id == 'test') {
+				requests.WATCH('/', (data) => {
+					this.plant.current_moisture = data.moisture;
+					this.plant.current_light = data.light;
+					this.plant.current_temperature = data.temperature;
+				});
+			}
 		}).catch(console.error);
 	},
 };
