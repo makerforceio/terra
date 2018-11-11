@@ -15,7 +15,7 @@
 				<h3>Temperature:</h3>
 				<ProgressBar :max="60" :value="plant.current_temperature" />
 				<h3>Light:</h3>
-				<ProgressBar :min="512" :max="1024" :value="plant.current_light" />
+				<ProgressBar :min="768" :max="1024" :value="plant.current_light" />
 			</div>
 		</div>
 		<p class="description">{{ plant.description }}</p>

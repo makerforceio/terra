@@ -5,7 +5,24 @@ export default data.plantsDB.allDocs().then((docs) => {
 	if (docs.total_rows <= 0) {
 		return data.plantsDB.bulkDocs([
 			{
-				_id: 'test',
+				_id: 'test3',
+				name: 'Groot',
+				recommended_moisture: 100,
+				recommended_light: 100,
+				recommended_temperature: 100,
+				current_moisture: 20,
+				current_light: 15,
+				current_temperature: 5,
+				description: 'People always say I\'m a vegtable, but I\'m also a fruit. My friend the plant likes to tease me and it makes me laugh haha. ',
+				exp: 55,
+				expup: 60,
+				health: 50,
+				level: 1,
+				type: 'tomato',
+				image: '/characters/groot.gif',
+			},
+			{
+				_id: 'test2',
 				name: 'Tomato',
 				recommended_moisture: 100,
 				recommended_light: 100,
@@ -22,6 +39,7 @@ export default data.plantsDB.allDocs().then((docs) => {
 				image: '/characters/tomato.png',
 			},
 			{
+				_id: 'test',
 				name: 'Sudharshan Plant',
 				recommended_moisture: 100,
 				recommended_light: 100,
