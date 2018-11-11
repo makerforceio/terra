@@ -30,7 +30,7 @@ import data from '../data';
 import Requests from '../requests';
 import ProgressBar from '../components/ProgressBar.vue';
 
-const requests = new Requests('http://10.185.1.72');
+const requests = new Requests('http://192.168.43.148');
 
 export default {
 	name: 'Plant',
