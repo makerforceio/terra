@@ -17,7 +17,7 @@ export default {
 			center: [103.7776456, 1.3033084],
 			zoom: 16.0,
 		});
-		for (let i = 1; i <= 5; i += 1) {
+		for (let i = 1; i <= 6; i += 1) {
 			this.map.loadImage(`/users/user-${i}.png`, (err, image) => {
 				if (err) throw err;
 				this.map.addImage(`user-${i}`, image);
@@ -102,6 +102,20 @@ export default {
 									],
 								},
 							},
+							{
+								type: 'Feature',
+								properties: {
+									description: 'Daniel Lim',
+									icon: 'user-6',
+								},
+								geometry: {
+									type: 'Point',
+									coordinates: [
+										103.77760019493103,
+										1.3063586244491103,
+									],
+								},
+							},
 						],
 					},
 
@@ -110,10 +124,15 @@ export default {
 					'icon-image': '{icon}',
 					'icon-size': 0.2,
 
-					'text-field': '{title}',
-					'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-					'text-offset': [0, 0.6],
+					'text-field': '{description}',
+					'text-font': ['Nunito Bold'],
+					'text-offset': [0, 0.9],
 					'text-anchor': 'top',
+				},
+				paint: {
+					'text-color': '#421007',
+					'text-halo-color': '#ffffff',
+					'text-halo-width': 1,
 				},
 			});
 		});
