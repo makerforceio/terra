@@ -5,7 +5,24 @@ export default data.plantsDB.allDocs().then((docs) => {
 	if (docs.total_rows <= 0) {
 		return data.plantsDB.bulkDocs([
 			{
-				_id: 'test',
+				_id: 'test3',
+				name: 'Groot',
+				recommended_moisture: 100,
+				recommended_light: 100,
+				recommended_temperature: 100,
+				current_moisture: 20,
+				current_light: 15,
+				current_temperature: 5,
+				description: 'People always say I\'m a vegtable, but I\'m also a fruit. My friend the plant likes to tease me and it makes me laugh haha. ',
+				exp: 55,
+				expup: 60,
+				health: 50,
+				level: 1,
+				type: 'tomato',
+				image: '/characters/groot.gif',
+			},
+			{
+				_id: 'test2',
 				name: 'Tomato',
 				recommended_moisture: 100,
 				recommended_light: 100,
@@ -13,22 +30,26 @@ export default data.plantsDB.allDocs().then((docs) => {
 				current_moisture: 20,
 				current_light: 15,
 				current_temperature: 5,
-				description: 'Not a vegetable',
-				exp: 10,
-				expup: 100,
+				description: 'People always say I\'m a vegtable, but I\'m also a fruit. My friend the plant likes to tease me and it makes me laugh haha. ',
+				exp: 40,
+				expup: 60,
 				health: 50,
 				level: 1,
 				type: 'tomato',
 				image: '/characters/tomato.png',
 			},
 			{
+				_id: 'test',
 				name: 'Sudharshan Plant',
 				recommended_moisture: 100,
 				recommended_light: 100,
 				recommended_temperature: 100,
-				description: 'Why',
+				current_moisture: 20,
+				current_light: 15,
+				current_temperature: 5,
+				description: 'Hey there! I was from IKEA and lived a sad life on the shelf until I was adopted by you! You gave me such a happy life watering me every day and taking such good care of me. I also made new friends who you take care of too',
 				exp: 20,
-				expup: 250,
+				expup: 60,
 				health: 75,
 				level: 2,
 				type: 'sudharshan',
@@ -41,14 +62,17 @@ export default data.plantsDB.allDocs().then((docs) => {
 	if (res.total_rows <= 0) {
 		return data.playerDB.put({
 			_id: 'player',
-			name: 'Player',
-			score: 0,
+			name: 'Danny Boy',
+			score: 1266,
+			avatarURL: '/users/daniel.jpg',
+			/*
 			_attachments: {
 				avatar: {
 					content_type: 'image/svg+xml',
 					data: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz48cGF0aCBkPSJNMTIgNmMxLjEgMCAyIC45IDIgMnMtLjkgMi0yIDItMi0uOS0yLTIgLjktMiAyLTJtMCAxMGMyLjcgMCA1LjggMS4yOSA2IDJINmMuMjMtLjcyIDMuMzEtMiA2LTJtMC0xMkM5Ljc5IDQgOCA1Ljc5IDggOHMxLjc5IDQgNCA0IDQtMS43OSA0LTQtMS43OS00LTQtNHptMCAxMGMtMi42NyAwLTggMS4zNC04IDR2MmgxNnYtMmMwLTIuNjYtNS4zMy00LTgtNHoiLz48L3N2Zz4=',
 				},
 			},
+			*/
 		});
 	}
 	return '';

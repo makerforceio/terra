@@ -6,16 +6,16 @@
 			</div>
 			<div class="stats">
 				<h1 class="name">{{ plant.name }}</h1>
-				<Progress :max="plant.expup" :value="plant.exp" class=".exp" />
+				<ProgressBar :max="plant.expup" :value="plant.exp" class=".exp" />
 				<h3 class="lvl">Lvl {{ plant.level }}</h3>
 				<h3>Overall Health:</h3>
-				<Progress :max="100" :value="plant.health" />
+				<ProgressBar :max="64" :value="plant.health" />
 				<h3>Soil Moisture:</h3>
-				<Progress :max="1024" :value="plant.current_moisture" />
+				<ProgressBar :max="128" :value="plant.current_moisture" />
 				<h3>Temperature:</h3>
-				<Progress :max="1024" :value="plant.currrent_temperature" />
+				<ProgressBar :max="60" :value="plant.current_temperature" />
 				<h3>Light:</h3>
-				<Progress :max="1024" :value="plant.current_light" />
+				<ProgressBar :min="768" :max="1024" :value="plant.current_light" />
 			</div>
 		</div>
 		<p class="description">{{ plant.description }}</p>
@@ -28,27 +28,27 @@
 <script>
 import data from '../data';
 import Requests from '../requests';
-import Progress from '../components/Progress.vue';
+import ProgressBar from '../components/ProgressBar.vue';
 
-const requests = new Requests('http://localhost:9000');
+const requests = new Requests('http://192.168.43.148');
 
 export default {
 	name: 'Plant',
-	components: { Progress },
+	components: { ProgressBar },
 	data() {
 		return {
 			plant: {},
 		};
 	},
-	mounted() {
+	created() {
 		data.plantsDB.get(this.$route.params.id).then((doc) => {
 			this.plant = doc;
 			// eslint-disable-next-line
-			if (this.plant._id == 'test') {
-				requests.WATCH('/', (data) => {
-					this.plant.current_moisture = data.moisture;
-					this.plant.current_light = data.light;
-					this.plant.current_temperature = data.temperature;
+			if (this.plant._id === 'test') {
+				requests.WATCH('/', (d) => {
+					this.plant.current_moisture = d.moisture;
+					this.plant.current_light = 1024 - d.light;
+					this.plant.current_temperature = d.temperature;
 				});
 			}
 		}).catch(console.error);
@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .container {
-	margin: 1rem;
+	padding: 1rem;
 }
 
 .top-row {

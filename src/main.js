@@ -6,7 +6,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import App from './App.vue';
 import 'normalize.css';
+import './global.css';
 import router from './router';
+import './registerServiceWorker';
 
 library.add(fas);
 library.add(fab);

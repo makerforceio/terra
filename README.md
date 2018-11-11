@@ -1,4 +1,7 @@
-# theplantgame
+
+# Terra
+
+![meow](output.gif)
 
 ## Project setup
 ```
