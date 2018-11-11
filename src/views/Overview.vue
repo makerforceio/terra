@@ -44,9 +44,12 @@ export default {
 		data.playerDB.get('player').then((player) => {
 			this.playerName = player.name;
 			this.score = player.score;
+			this.avatarURL = player.avatarURL;
 			return data.playerDB.getAttachment('player', 'avatar');
 		}).then((blob) => {
-			this.avatarURL = URL.createObjectURL(blob);
+			if (blob) {
+				this.avatarURL = URL.createObjectURL(blob);
+			}
 		}).catch(console.error);
 
 		data.plantsDB.allDocs({

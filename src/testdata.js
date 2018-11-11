@@ -44,6 +44,9 @@ export default data.plantsDB.allDocs().then((docs) => {
 				recommended_moisture: 100,
 				recommended_light: 100,
 				recommended_temperature: 100,
+				current_moisture: 20,
+				current_light: 15,
+				current_temperature: 5,
 				description: 'Hey there! I was from IKEA and lived a sad life on the shelf until I was adopted by you! You gave me such a happy life watering me every day and taking such good care of me. I also made new friends who you take care of too',
 				exp: 20,
 				expup: 60,
@@ -61,12 +64,15 @@ export default data.plantsDB.allDocs().then((docs) => {
 			_id: 'player',
 			name: 'Danny Boy',
 			score: 1266,
+			avatarURL: '/users/daniel.jpg',
+			/*
 			_attachments: {
 				avatar: {
 					content_type: 'image/svg+xml',
 					data: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDBWMHoiLz48cGF0aCBkPSJNMTIgNmMxLjEgMCAyIC45IDIgMnMtLjkgMi0yIDItMi0uOS0yLTIgLjktMiAyLTJtMCAxMGMyLjcgMCA1LjggMS4yOSA2IDJINmMuMjMtLjcyIDMuMzEtMiA2LTJtMC0xMkM5Ljc5IDQgOCA1Ljc5IDggOHMxLjc5IDQgNCA0IDQtMS43OSA0LTQtMS43OS00LTQtNHptMCAxMGMtMi42NyAwLTggMS4zNC04IDR2MmgxNnYtMmMwLTIuNjYtNS4zMy00LTgtNHoiLz48L3N2Zz4=',
 				},
 			},
+			*/
 		});
 	}
 	return '';

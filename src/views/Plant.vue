@@ -40,11 +40,11 @@ export default {
 			plant: {},
 		};
 	},
-	mounted() {
+	created() {
 		data.plantsDB.get(this.$route.params.id).then((doc) => {
 			this.plant = doc;
 			// eslint-disable-next-line
-			if (this.plant._id == 'test') {
+			if (this.plant._id === 'test') {
 				requests.WATCH('/', (d) => {
 					this.plant.current_moisture = d.moisture;
 					this.plant.current_light = 1024 - d.light;
