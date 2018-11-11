@@ -14,7 +14,7 @@ def connectWifi():
     if not sta_if.isconnected():
         print('Connecting to the network')
         sta_if.active(True)
-        sta_if.connect('Auora', 'Sundar_home_wifi_network')
+        sta_if.connect("Ambrose's Pixel", 'meow the cat')
         while not sta_if.isconnected():
             pass
     print('network config:', sta_if.ifconfig())
@@ -52,28 +52,32 @@ def main():
     indicator[0] = (0, 255, 0) # set the first pixel to white
     indicator.write()  
 
-    conn, address = s.accept()
-
-    header = 'HTTP/1.1 200 OK\n'
-    header += 'Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept\n'
-    header += 'Access-Control-Allow-Origin: *\n'
-    header += 'Cache-Control: no-cache\n'
-    header += 'Connection: keep-alive\n'
-    header += 'Content-Type: text/event-stream\n'
-    header += 'Transfer-Encoding: chunked\n'
-
-    final_response = header.encode('utf-8')
-    conn.send(final_response)
-    print(final_response)
-
     while True:
-        header = 'HTTP/1.1 200 OK\n'
+        conn, address = s.accept()
+
+        time.sleep_ms(100)
+        conn.recv(1024)
+
+        header = 'HTTP/1.1 200 OK\r\n'
+        header += 'Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept\r\n'
+        header += 'Access-Control-Allow-Origin: *\r\n'
+        header += 'Cache-Control: no-cache\r\n'
+        header += 'Connection: keep-alive\r\n'
+        header += 'Content-Type: text/event-stream\r\n\r\n'
+
         final_response = header.encode('utf-8')
-        final_response += sensorRead(light) # No moisture or soil detection
         conn.send(final_response)
         print(final_response)
-        time.sleep(1)  
-    
-    conn.close()
+
+        while True:
+            final_response = "data: " + sensorRead(light) + "\n\n" # No moisture or soil detection
+            try:
+                conn.send(final_response)
+            except OSError as e:
+                conn.close()
+                break
+
+            print(final_response)
+            time.sleep(1)
 
 main() 
