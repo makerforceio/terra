@@ -8,14 +8,17 @@
 				<h3 class="name">{{ plant.name }}</h3>
 				<span class="lvl">Lvl {{ plant.level }}</span>
 			</div>
-			<progress max="100" :value="plant.health"></progress>
+			<Progress :max="100" :value="plant.health" />
 		</div>
 	</div>
 </template>
 
 <script>
+import Progress from './Progress.vue';
+
 export default {
 	name: 'PlantInfo',
+	components: { Progress },
 	props: {
 		plant: {
 			image: String,
@@ -82,26 +85,4 @@ export default {
 	font-size: 0.875rem;
 	line-height: inherit;
 }
-
-progress[value] {
-  /* Reset the default appearance */
-  -webkit-appearance: none;
-  appearance: none;
-
-  width: 100%;
-  height: 0.6rem;
-}
-
-progress[value]::-webkit-progress-bar {
-  background-color: #ECFFF7;
-  border-radius: 5px;
-  box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.25) inset;
-}
-
-progress[value]::-webkit-progress-value {
-	border-radius: 0.5rem;
-	background: linear-gradient(#44DF9E, #2AB87D);
-	background-repeat: repeat-y;
-}
-
 </style>

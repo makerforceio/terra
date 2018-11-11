@@ -7,7 +7,7 @@
 		<div class="plantlist">
 			<PlantInfo
 				v-for="plant in plants" :key="plant.id"
-				@click="$route.push({ name: 'plant', params: { id: plant.id } })"
+				@click.native="$router.push({ name: 'plant', params: { id: plant.id } })"
 				class="plant" :plant="plant" />
 		</div>
 	</div>
