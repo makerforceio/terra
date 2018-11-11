@@ -18,7 +18,7 @@ export default {
 			zoom: 16.0,
 		});
 		for (let i = 1; i <= 5; i += 1) {
-			this.map.loadImage(`/users/user-${i}.jpg`, (err, image) => {
+			this.map.loadImage(`/users/user-${i}.png`, (err, image) => {
 				if (err) throw err;
 				this.map.addImage(`user-${i}`, image);
 			});

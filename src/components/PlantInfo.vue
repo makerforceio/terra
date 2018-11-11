@@ -8,17 +8,17 @@
 				<h3 class="name">{{ plant.name }}</h3>
 				<span class="lvl">Lvl {{ plant.level }}</span>
 			</div>
-			<Progress :max="100" :value="plant.health" />
+			<ProgressBar :max="100" :value="plant.health" />
 		</div>
 	</div>
 </template>
 
 <script>
-import Progress from './Progress.vue';
+import ProgressBar from './ProgressBar.vue';
 
 export default {
 	name: 'PlantInfo',
-	components: { Progress },
+	components: { ProgressBar },
 	props: {
 		plant: {
 			image: String,
