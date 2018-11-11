@@ -1,6 +1,6 @@
 <template>
 	<div class="map">
-		<div class="">
+		<div class="meme"></div>
 		<div id="mapbox"></div>
 	</div>
 </template>
