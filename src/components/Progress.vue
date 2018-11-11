@@ -2,13 +2,13 @@
   <progress :max="max" :value="value"></progress>
 </template>
 <script>
-  export default {
-    name: 'Progress',
-    props: {
-      max: Number,
-      value: Number,
-    },
-  };
+export default {
+	name: 'Progress',
+	props: {
+		max: Number,
+		value: Number,
+	},
+};
 </script>
 <style scoped>
 progress[value] {
