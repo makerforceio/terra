@@ -13,9 +13,9 @@ export default data.plantsDB.allDocs().then((docs) => {
 				current_moisture: 20,
 				current_light: 15,
 				current_temperature: 5,
-				description: 'Not a vegetable',
-				exp: 10,
-				expup: 100,
+				description: 'People always say I\'m a vegtable, but I\'m also a fruit. My friend the plant likes to tease me and it makes me laugh haha. ',
+				exp: 40,
+				expup: 60,
 				health: 50,
 				level: 1,
 				type: 'tomato',
@@ -26,9 +26,9 @@ export default data.plantsDB.allDocs().then((docs) => {
 				recommended_moisture: 100,
 				recommended_light: 100,
 				recommended_temperature: 100,
-				description: 'Why',
+				description: 'Hey there! I was from IKEA and lived a sad life on the shelf until I was adopted by you! You gave me such a happy life watering me every day and taking such good care of me. I also made new friends who you take care of too',
 				exp: 20,
-				expup: 250,
+				expup: 60,
 				health: 75,
 				level: 2,
 				type: 'sudharshan',
@@ -41,8 +41,8 @@ export default data.plantsDB.allDocs().then((docs) => {
 	if (res.total_rows <= 0) {
 		return data.playerDB.put({
 			_id: 'player',
-			name: 'Player',
-			score: 0,
+			name: 'Danny Boy',
+			score: 1266,
 			_attachments: {
 				avatar: {
 					content_type: 'image/svg+xml',

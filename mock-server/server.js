@@ -9,9 +9,9 @@ http.createServer((req, res) => {
 	setInterval(() => {
 		res.write(`data: ${JSON.stringify({
 			id: 'test',
-			light: 1000,
-			moisture: 1024,
-			soil: 1024,
+			light: 800,
+			moisture: 128,
+			tempreature: 128,
 		})}\n\n`);
 	}, 1000);
 }).listen(9000);

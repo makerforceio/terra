@@ -1,10 +1,11 @@
 <template>
-  <progress :max="max" :value="value"></progress>
+  <progress :min="min" :max="max" :value="value"></progress>
 </template>
 <script>
 export default {
 	name: 'Progress',
 	props: {
+		min: Number,
 		max: Number,
 		value: Number,
 	},

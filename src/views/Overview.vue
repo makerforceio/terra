@@ -9,6 +9,7 @@
 				v-for="plant in plants" :key="plant.id"
 				@click.native="$router.push({ name: 'plant', params: { id: plant.id } })"
 				class="plant" :plant="plant" />
+			<div class="plantadd"><font-awesome-icon icon="plus" /></div>
 		</div>
 	</div>
 </template>
@@ -30,13 +31,13 @@ export default {
 		Status,
 	},
 	created() {
-		requests.WATCH('/', (data) => {
-			const plantData = this.plants.find(plant => plant.id === data.id);
+		requests.WATCH('/', (d) => {
+			const plantData = this.plants.find(plant => plant.id === d.id);
 			console.log(plantData.current_moisture);
-			const i = this.plants.findIndex(plant => plant.id === data.id);
-			plantData.current_moisture = data.moisture;
-			plantData.current_light = data.light;
-			plantData.current_temperature = data.temperature;
+			const i = this.plants.findIndex(plant => plant.id === d.id);
+			plantData.current_moisture = d.moisture;
+			plantData.current_light = d.light;
+			plantData.current_temperature = d.temperature;
 			this.plants.splice(i, 1, plantData);
 		});
 
@@ -93,7 +94,27 @@ export default {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
 	margin: 1rem;
+}
+.plantadd {
+	background-color: #FFFFFF;
+
+	font-family: "Nunito";
+	font-style: normal;
+	line-height: normal;
+	/* color: #420B07; */
+	color: #2AB87D;
+
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 2rem 0;
+	font-size: 2rem;
 }
 .plant {
 	width: 100%;

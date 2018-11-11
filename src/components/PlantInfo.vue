@@ -8,7 +8,7 @@
 				<h3 class="name">{{ plant.name }}</h3>
 				<span class="lvl">Lvl {{ plant.level }}</span>
 			</div>
-			<ProgressBar :max="100" :value="plant.health" />
+			<ProgressBar :max="plant.expup" :value="plant.exp" />
 		</div>
 	</div>
 </template>
